@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Food_App.View.DetailPage"
+             xmlns:mct="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
+             xmlns:mv="clr-namespace:Food_App.ViewModel"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             Title="DetailPage"
+             xmlns:model="clr-namespace:Food_App.Model"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#886ced"
+             x:DataType="mv:DetailViewModel">
+    
+    <ContentPage.BindingContext>
+        <mv:DetailViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Behaviors>
+        <mct:StatusBarBehavior StatusBarColor="#886ced" StatusBarStyle="LightContent"/>
+    </ContentPage.Behaviors>
+
+    <Grid RowDefinitions=".20*,.25*">
+
+        <Grid>
+            <Button Text="&#xE806;"
+                    FontFamily="Icons"
+                    Padding="35,20"
+                    TextColor="White"
+                    Command="{Binding GoToBackCommand}"
+                    FontSize="25"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    BackgroundColor="Transparent"/>
+
+            <Button Text="&#xE805;"
+                    FontFamily="Icons"
+                    Padding="35,20"
+                    TextColor="White"
+                    FontSize="25"
+                    HorizontalOptions="End"
+                    VerticalOptions="Start"
+                    BackgroundColor="Transparent"/>
+            
+            <Image Source="{Binding Food.image}"
+                   Aspect="AspectFit"
+                   WidthRequest="350"
+                   HeightRequest="350"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
+        </Grid>
+        
+        <Grid Grid.Row="1">
+            <Border BackgroundColor="White"
+                    Stroke="#3e85b3"
+                    StrokeThickness="0"
+                    StrokeShape="RoundRectangle 75,0,0,0">
+                <Grid RowDefinitions=".2*,.2*,.3*,.1*"
+                      RowSpacing="5"
+                      Padding="30,0">
+                    <Border Stroke="Transparent"
+                            StrokeShape="RoundRectangle 30"
+                            WidthRequest="90"
+                            HeightRequest="50"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Start"
+                            BackgroundColor="#886ced">
+
+                        <Label FontSize="19"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="&#xE803; "
+                                          FontFamily="Icons"
+                                          TextColor="DarkGoldenrod"/>
+                                    <Span Text="{Binding Food.rating}"
+                                          TextColor="White"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                    </Border>
+
+                    <Label FontSize="19"
+                           VerticalOptions="Center"
+                           HorizontalOptions="End">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="&#xF155; "
+                                      FontFamily="Icons"
+                                      TextColor="DarkGoldenrod"/>
+                                
+                                <Span Text="{Binding Food.price}"
+                                      TextColor="DarkGoldenrod"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    
+                    <Grid Grid.Row="1" >
+                        <VerticalStackLayout Spacing="10">
+                            
+                        <Label Text="{Binding Food.title}"
+                               TextColor="Black"
+                               FontSize="20"
+                               HorizontalOptions="Start"
+                               VerticalOptions="Start"/>
+                            
+                            <Label FontSize="14" LineHeight="1.3">
+                                <Label.FormattedText>
+                                    <FormattedString >
+
+                                        <Span FontFamily="RubikRegular"
+                                              Text="{Binding Food.description}"
+                                              TextColor="#a48af6"/>
+
+                                        <Span FontFamily="RubikLight"
+                                              Text="Read more"
+                                              TextColor="#50ABE7"/>
+
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </VerticalStackLayout>
+                    </Grid>
+                    
+                    <Grid Grid.Row="2">
+                        <Label Text="Add Ons"
+                               TextColor="Black"
+                               FontSize="17"
+                               HorizontalOptions="Start"
+                               VerticalOptions="Start"/>
+                        
+                        <CollectionView VerticalOptions="End"
+                                        ItemsSource="{Binding Items}"
+                                        >
+                            
+                            <CollectionView.ItemsLayout>
+                                <LinearItemsLayout Orientation="Horizontal"/>
+                            </CollectionView.ItemsLayout>
+
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate x:DataType="model:Ingredient">
+                        <Border WidthRequest="135"
+                                HeightRequest="140"
+                                StrokeThickness="0"
+                                Stroke="Transparent"
+                                HorizontalOptions="Start"
+                                VerticalOptions="Center"
+                                Margin="-9">
+                            <Grid>
+                                <Frame BorderColor="Transparent"
+                                           BackgroundColor="{StaticResource Gray100}"
+                                           WidthRequest="95"
+                                           HeightRequest="110"
+                                           CornerRadius="15"
+                                           VerticalOptions="Center"
+                                           HorizontalOptions="Center">
+                                    <Grid>
+                                        <Image Source="{Binding images}"
+                                               Aspect="AspectFill"
+                                               WidthRequest="70"
+                                               HeightRequest="70"
+                                               VerticalOptions="Start"
+                                               HorizontalOptions="Center"/>
+                                    </Grid>
+                                </Frame>
+                            
+                                <Button Text="&#xE801;"
+                                        FontFamily="Icons"
+                                        TextColor="Green"
+                                        FontSize="27"
+                                        HorizontalOptions="End"
+                                        VerticalOptions="End"
+                                        BackgroundColor="Transparent"/>
+                            </Grid>
+                        </Border>
+                        </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </Grid>
+                    
+                    <Button Grid.Row="3" 
+                            Text="Add a Cart"
+                            TextColor="White"
+                            FontSize="18"
+                            VerticalOptions="Start"
+                            HeightRequest="55"
+                            CornerRadius="15"
+                            BackgroundColor="#886ced"
+                            >
+                        
+                    </Button>
+                    
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+    
+</ContentPage>

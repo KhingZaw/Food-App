@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Food_App.View.MainPage"
+             xmlns:mct="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
+             xmlns:vm="clr-namespace:Food_App.ViewModel"
+             Shell.NavBarIsVisible="False"
+             >
+    <ContentPage.BindingContext>
+        <vm:MainViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Behaviors>
+        <mct:StatusBarBehavior StatusBarColor="#886ced" StatusBarStyle="LightContent"/>
+    </ContentPage.Behaviors>
+
+    <Frame BorderColor="#886ced"
+           CornerRadius="0.1"
+           HasShadow="False">
+        
+        <Frame.Background>
+            <!-- StartPoint defaults to (0,0) -->
+            <LinearGradientBrush EndPoint="0,1">
+                <GradientStop Color="#886ced"
+                          Offset="0.1" />
+                <GradientStop Color="#BAE0F3"
+                          Offset="1.0" />
+            </LinearGradientBrush>
+        </Frame.Background>
+        
+        <Grid RowDefinitions=".18*,.05*,.05*">
+            <Frame CornerRadius="300"
+                   BorderColor="White"
+                   HeightRequest="300"
+                   BackgroundColor="White"
+                   WidthRequest="300">
+                <Image Aspect="AspectFill"
+                       Source="foodlog1.png"/>
+            </Frame>
+            
+            <Grid Grid.Row="1">
+                
+                <Label Text="Enjoy"
+                   TextColor="WhiteSmoke"
+                   FontSize="35"
+                   VerticalOptions="Start"
+                   HorizontalOptions="Center"/>
+                
+                <Label Text="Your Food"
+                   TextColor="WhiteSmoke"
+                   FontSize="35"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"/>
+            </Grid>
+
+            <Grid Grid.Row="2"
+                  VerticalOptions="Start">
+                <Button Text="Get Started"
+                        TextColor="{StaticResource Primary}"
+                        BackgroundColor="White"
+                        CornerRadius="230"
+                        FontSize="19"
+                        WidthRequest="220"
+                        HeightRequest="50"
+                        Command="{Binding GoToHomeCommand}"/>
+            </Grid>
+        </Grid>
+    </Frame>
+</ContentPage>
