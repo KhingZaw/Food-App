@@ -6,18 +6,26 @@
     xmlns:view="clr-namespace:Food_App.View"
     Shell.FlyoutBehavior="Flyout"
     Title="Food_App"
-    Shell.TabBarIsVisible="False"
+    Shell.TabBarIsVisible="True"
     Shell.NavBarIsVisible="False"
     >
-    <ShellContent Title="Mine"
-                  ContentTemplate="{DataTemplate view:MainPage}"/>
+
+    <!--<ShellContent ContentTemplate="{DataTemplate view:MainPage}"/>-->
+
     <TabBar>
-        <Tab Title="Home">
-            <ShellContent ContentTemplate="{DataTemplate view:HomePage}"/>
-        </Tab>
-        <Tab Title="Detail">
-            <ShellContent ContentTemplate="{DataTemplate view:DetailPage}"/>
-        </Tab>
+        
+        <ShellContent Title="Home"
+                      ContentTemplate="{DataTemplate view:HomePage}"/>
+        
+        <ShellContent Title="Search"
+                      ContentTemplate="{DataTemplate view:HomePage}"/>
+
+        <ShellContent Title="Favorite"
+                      ContentTemplate="{DataTemplate view:HomePage}"/>
+        
+        <ShellContent Title="History"
+                      ContentTemplate="{DataTemplate view:HomePage}"/>
+        
     </TabBar>
 
 </Shell>

@@ -5,6 +5,7 @@
              xmlns:mct="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
              xmlns:vm="clr-namespace:Food_App.ViewModel"
              Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False"
              >
     <ContentPage.BindingContext>
         <vm:MainViewModel/>
@@ -59,6 +60,7 @@
                         TextColor="{StaticResource Primary}"
                         BackgroundColor="White"
                         CornerRadius="230"
+                        BorderWidth="2"
                         FontSize="19"
                         WidthRequest="220"
                         HeightRequest="50"

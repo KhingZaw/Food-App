@@ -5,6 +5,7 @@
              xmlns:mct="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
              xmlns:mv="clr-namespace:Food_App.ViewModel"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:control="clr-namespace:Food_App.Control"
              Title="DetailPage"
              xmlns:model="clr-namespace:Food_App.Model"
              Shell.NavBarIsVisible="False"
@@ -22,25 +23,25 @@
     <Grid RowDefinitions=".20*,.25*">
 
         <Grid>
+            <Grid Padding="15" 
+                  VerticalOptions="Start">
+                
             <Button Text="&#xE806;"
                     FontFamily="Icons"
-                    Padding="35,20"
                     TextColor="White"
                     Command="{Binding GoToBackCommand}"
                     FontSize="25"
                     HorizontalOptions="Start"
-                    VerticalOptions="Start"
-                    BackgroundColor="Transparent"/>
+                    BackgroundColor="Transparent"
+                    />
 
             <Button Text="&#xE805;"
                     FontFamily="Icons"
-                    Padding="35,20"
                     TextColor="White"
                     FontSize="25"
                     HorizontalOptions="End"
-                    VerticalOptions="Start"
                     BackgroundColor="Transparent"/>
-            
+            </Grid>
             <Image Source="{Binding Food.image}"
                    Aspect="AspectFit"
                    WidthRequest="350"
@@ -54,9 +55,11 @@
                     Stroke="#3e85b3"
                     StrokeThickness="0"
                     StrokeShape="RoundRectangle 75,0,0,0">
+                
                 <Grid RowDefinitions=".2*,.2*,.3*,.1*"
                       RowSpacing="5"
                       Padding="30,0">
+                
                     <Border Stroke="Transparent"
                             StrokeShape="RoundRectangle 30"
                             WidthRequest="90"
@@ -95,10 +98,11 @@
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
-                    
+
                     <Grid Grid.Row="1" >
+                        
                         <VerticalStackLayout Spacing="10">
-                            
+                           
                         <Label Text="{Binding Food.title}"
                                TextColor="Black"
                                FontSize="20"
@@ -192,7 +196,15 @@
                     </Button>
                     
                 </Grid>
+                
             </Border>
+            
+            <control:ControlView WidthRequest="110"
+                                 HeightRequest="35"
+                                 Margin="0,0,30,250"
+                                 HorizontalOptions="EndAndExpand"
+                                 VerticalOptions="Center"/>
+            
         </Grid>
     </Grid>
     
