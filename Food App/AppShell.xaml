@@ -4,28 +4,31 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:view="clr-namespace:Food_App.View"
-    Shell.FlyoutBehavior="Flyout"
+    Shell.FlyoutBehavior="Disabled"
     Title="Food_App"
     Shell.TabBarIsVisible="True"
     Shell.NavBarIsVisible="False"
     >
-
-    <!--<ShellContent ContentTemplate="{DataTemplate view:MainPage}"/>-->
-
+    <!--<ShellContent Title="Main"
+              ContentTemplate="{DataTemplate view:MainPage}"/>-->
+    
     <TabBar>
         
         <ShellContent Title="Home"
-                      ContentTemplate="{DataTemplate view:HomePage}"/>
-        
+                      Icon="home.png"
+                      ContentTemplate="{DataTemplate view:HomePage}"
+                     />
+
         <ShellContent Title="Search"
-                      ContentTemplate="{DataTemplate view:HomePage}"/>
+                   ContentTemplate="{DataTemplate view:HomePage}"/>
 
         <ShellContent Title="Favorite"
-                      ContentTemplate="{DataTemplate view:HomePage}"/>
-        
+                      Icon="fav.png"
+                   ContentTemplate="{DataTemplate view:HomePage}"/>
+
         <ShellContent Title="History"
-                      ContentTemplate="{DataTemplate view:HomePage}"/>
-        
+                   ContentTemplate="{DataTemplate view:HomePage}"/>
+
     </TabBar>
 
 </Shell>

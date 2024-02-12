@@ -15,6 +15,7 @@ public partial class DetailViewModel : ObservableObject
     public ObservableRangeCollection<Ingredient> Items { get; set; } = new();
 
     FoodService _foodService;
+
     public DetailViewModel()
     {
         this._foodService = new FoodService();

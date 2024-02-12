@@ -7,7 +7,6 @@
              xmlns:m="clr-namespace:Food_App.Model"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              Title="HomePage"
-             Shell.NavBarIsVisible="False"
              BackgroundColor="Azure">
 
     <ContentPage.BindingContext>
@@ -18,180 +17,180 @@
         <toolkit:EventToCommandBehavior Command="{Binding GetFoodsCommand}" EventName="Appearing"/>
         <mct:StatusBarBehavior StatusBarColor="Azure" StatusBarStyle="LightContent"/>
     </ContentPage.Behaviors>
-
-    <Grid RowDefinitions=".2*,.1*,.3*,.6*,.8*,.0*"
+    <ScrollView>
+        <Grid RowDefinitions=".1*,.2*,.3*,.6*,.8*,.0*"
           RowSpacing="19">
 
-        <Grid Padding="25,0,25,0">
+            <Grid Padding="25,0,25,0">
 
-            <Label Text="Menu"
+                <Label Text="Menu"
                    TextColor="Black"
                    FontSize="35"
                    HorizontalOptions="Start"
                    VerticalOptions="Start"/>
 
-            <Frame BackgroundColor="Transparent"
+                <Frame BackgroundColor="Transparent"
                    BorderColor="White"
                    CornerRadius="130"
                    WidthRequest="45"
                    HeightRequest="45"
                    HorizontalOptions="End"
                    VerticalOptions="StartAndExpand">
-                <Image Aspect="AspectFit"
+                    <Image Aspect="AspectFit"
                        Source="images2.jpg"
                        WidthRequest="100"
                        HeightRequest="100"/>
-            </Frame>
-        </Grid>
+                </Frame>
+            </Grid>
 
-        <Grid Grid.Row="1">
-            <Border Stroke="Black"
+            <Grid Grid.Row="1">
+                <Border Stroke="Black"
                 StrokeThickness="0"
                 HorizontalOptions="Center"
                 WidthRequest="360"
                 HeightRequest="50"
-                VerticalOptions="End"
+                VerticalOptions="Center"
                 BackgroundColor="{StaticResource Secondary}">
 
-                <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="50"/>
-                </Border.StrokeShape>
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="50"/>
+                    </Border.StrokeShape>
 
-                <SearchBar HorizontalOptions="Center"
+                    <SearchBar HorizontalOptions="Center"
                        VerticalOptions="Center"
                        Placeholder="Search ..."
                        TextColor="Black"
                        />
-            </Border>
-        </Grid>
+                </Border>
+            </Grid>
 
-        <Grid Grid.Row="2">
-            <ScrollView Orientation="Horizontal"
+            <Grid Grid.Row="2">
+                <ScrollView Orientation="Horizontal"
                         HorizontalOptions="Center"
                         VerticalScrollBarVisibility="Never"
                         HorizontalScrollBarVisibility="Never"
                         BackgroundColor="Transparent"
                         >
-                <HorizontalStackLayout Spacing="13"
+                    <HorizontalStackLayout Spacing="13"
                                      RadioButtonGroup.GroupName="CoffeCategories"
                                      RadioButtonGroup.SelectedValue="{Binding .}"
                                      BindableLayout.ItemsSource="{StaticResource CategoriesArray}">
-                    <BindableLayout.ItemTemplate>
-                        <DataTemplate>
-                            <RadioButton x:Name="RadioCategory" Content="{Binding .}" Value="{Binding .}">
-                                <RadioButton.ControlTemplate>
-                                    <ControlTemplate>
-                                        <Grid HorizontalOptions="FillAndExpand">
-                                            <VisualStateManager.VisualStateGroups>
-                                                <VisualStateGroupList>
-                                                    <VisualStateGroup x:Name="CheckedStates">
-                                                        <VisualState x:Name="Checked">
-                                                            <VisualState.Setters>
-                                                                <Setter
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <RadioButton x:Name="RadioCategory" Content="{Binding .}" Value="{Binding .}">
+                                    <RadioButton.ControlTemplate>
+                                        <ControlTemplate>
+                                            <Grid HorizontalOptions="FillAndExpand">
+                                                <VisualStateManager.VisualStateGroups>
+                                                    <VisualStateGroupList>
+                                                        <VisualStateGroup x:Name="CheckedStates">
+                                                            <VisualState x:Name="Checked">
+                                                                <VisualState.Setters>
+                                                                    <Setter
                                                                   TargetName="CategoryImage"
                                                                   Property="Image.Opacity"
                                                                   Value="1"/>
-                                                                <Setter TargetName="CategoryLable"
+                                                                    <Setter TargetName="CategoryLable"
                                                                         Property="Label.TextColor"
                                                                         Value="#a48af6"/>
-                                                                <Setter
+                                                                    <Setter
                                                                   TargetName="ChipBorderView"
                                                                   Property="Border.Background"
                                                                   Value="#886ced"/>
-                                                            </VisualState.Setters>
-                                                        </VisualState>
-                                                        <VisualState x:Name="Unchecked">
-                                                            <VisualState.Setters>
-                                                                <Setter
+                                                                </VisualState.Setters>
+                                                            </VisualState>
+                                                            <VisualState x:Name="Unchecked">
+                                                                <VisualState.Setters>
+                                                                    <Setter
                                                                   TargetName="CategoryImage"
                                                                   Property="Image.Opacity"
                                                                   Value="1"/>
-                                                                <Setter TargetName="CategoryLable"
+                                                                    <Setter TargetName="CategoryLable"
                                                                         Property="Label.TextColor"
                                                                         Value="{StaticResource Gray500}"/>
-                                                                <Setter
+                                                                    <Setter
                                                                   TargetName="ChipBorderView"
                                                                   Property="Border.Background"
                                                                   Value="{StaticResource Secondary}"/>
-                                                            </VisualState.Setters>
-                                                        </VisualState>
-                                                    </VisualStateGroup>
-                                                </VisualStateGroupList>
-                                            </VisualStateManager.VisualStateGroups>
-                                            <Border StrokeThickness="0"
+                                                                </VisualState.Setters>
+                                                            </VisualState>
+                                                        </VisualStateGroup>
+                                                    </VisualStateGroupList>
+                                                </VisualStateManager.VisualStateGroups>
+                                                <Border StrokeThickness="0"
                                                     x:Name="ChipBorderView"
                                                     HeightRequest="80"
                                                     WidthRequest="80"
                                                     HorizontalOptions="Center"
                                                     VerticalOptions="Start">
 
-                                                <Border.StrokeShape>
-                                                    <RoundRectangle CornerRadius="15"/>
-                                                </Border.StrokeShape>
+                                                    <Border.StrokeShape>
+                                                        <RoundRectangle CornerRadius="15"/>
+                                                    </Border.StrokeShape>
 
-                                                <Image Aspect="AspectFill"
+                                                    <Image Aspect="AspectFill"
                                                        Source="foodlog1.png"
                                                        x:Name="CategoryImage"
                                                        WidthRequest="50"
                                                        HeightRequest="60"/>
-                                            </Border>
+                                                </Border>
 
-                                            <Label Text="{TemplateBinding Content}"
+                                                <Label Text="{TemplateBinding Content}"
                                                    x:Name="CategoryLable"
                                                    HorizontalOptions="Center"
                                                    VerticalOptions="End"
                                                    FontSize="15"
                                                    />
-                                        </Grid>
-                                    </ControlTemplate>
-                                </RadioButton.ControlTemplate>
-                            </RadioButton>
-                        </DataTemplate>
-                    </BindableLayout.ItemTemplate>
-                </HorizontalStackLayout>
-            </ScrollView>
-        </Grid>
+                                            </Grid>
+                                        </ControlTemplate>
+                                    </RadioButton.ControlTemplate>
+                                </RadioButton>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </HorizontalStackLayout>
+                </ScrollView>
+            </Grid>
 
-        <Grid Grid.Row="3"
+            <Grid Grid.Row="3"
               Padding="30,0">
 
-            <Label Text="Promotions" 
+                <Label Text="Promotions" 
                    TextColor="Black"
                    FontSize="20"
                    VerticalOptions="Start"
                    HorizontalOptions="Start"/>
-            <Grid VerticalOptions="End">
-                <Frame HeightRequest="170" 
+                <Grid VerticalOptions="End">
+                    <Frame HeightRequest="170" 
                        CornerRadius="25"
                        BorderColor="Transparent"
                    >
-                    <Frame.Background>
-                        <!-- StartPoint defaults to (0,0) -->
-                        <LinearGradientBrush EndPoint="1,0">
-                            <GradientStop Color="#886ced"
+                        <Frame.Background>
+                            <!-- StartPoint defaults to (0,0) -->
+                            <LinearGradientBrush EndPoint="1,0">
+                                <GradientStop Color="#886ced"
                                           Offset="0.1" />
-                            <GradientStop Color="#a48af6"
+                                <GradientStop Color="#a48af6"
                                           Offset="1.0" />
-                        </LinearGradientBrush>
-                    </Frame.Background>
-                    <VerticalStackLayout Spacing="11">
-                        <Label Text="Today's Offer"
+                            </LinearGradientBrush>
+                        </Frame.Background>
+                        <VerticalStackLayout Spacing="11">
+                            <Label Text="Today's Offer"
                                TextColor="White"
                                FontSize="Body"/>
 
-                        <Label Text="Free Box of Fries"
+                            <Label Text="Free Box of Fries"
                                TextColor="White"
                                FontSize="20"/>
 
-                        <Label Text="on all orders above $150"
+                            <Label Text="on all orders above $150"
                                TextColor="White"
                                FontSize="Body"/>
-                    </VerticalStackLayout>
-                </Frame>
+                        </VerticalStackLayout>
+                    </Frame>
+                </Grid>
             </Grid>
-        </Grid>
 
-        <Image Grid.Row="3"
+            <Image Grid.Row="3"
                Source="promotions.png"
                Aspect="AspectFill"
                HorizontalOptions="End"
@@ -200,68 +199,88 @@
                HeightRequest="140"
               Margin="0,0,20,0"/>
 
-        <Grid Grid.Row="4"
+            <Grid Grid.Row="4"
               Padding="30,0">
-            <Label Text="Popular"
+                <Label Text="Popular"
                    TextColor="Black"
                    FontSize="20"
                    HorizontalOptions="Start"
                    VerticalOptions="Start"/>
-            
+
                 <CollectionView ItemsSource="{Binding foods}"
                             VerticalOptions="End">
 
-                <CollectionView.ItemsLayout>
-                    <LinearItemsLayout ItemSpacing="22" Orientation="Horizontal"/>
-                </CollectionView.ItemsLayout>
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout ItemSpacing="22" Orientation="Horizontal"/>
+                    </CollectionView.ItemsLayout>
 
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Frame WidthRequest="165"
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame WidthRequest="165"
                                HeightRequest="230"
                                CornerRadius="25"
                                HorizontalOptions="Center"
                                VerticalOptions="End"
                                BackgroundColor="{StaticResource Secondary}"
                                Padding="15">
-                            <Frame.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type mv:HomeViewModel}}, Path=GoToDetailCommand}"
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type mv:HomeViewModel}}, Path=GoToDetailCommand}"
                                                       CommandParameter="{Binding .}"/>
-                            </Frame.GestureRecognizers>
-                            <Grid RowDefinitions=".3*,.2*,.2*">
+                                </Frame.GestureRecognizers>
 
-                                <Image Source="{Binding image}"
+                                <Grid RowDefinitions=".2*,.3*,.2*,.2*">
+
+                                    <ImageButton HorizontalOptions="Start"
+                                             VerticalOptions="Start"
+                                             Source="love_filled.png" 
+                                             Padding="0,0,20,20"
+                                             Command="{Binding ProductFavCommand}" CommandParameter="{Binding .}">
+                                        <ImageButton.Triggers>
+                                            <DataTrigger TargetType="ImageButton" 
+                                                     Binding="{Binding ProductIsFav}" Value="True">
+                                                <Setter Property="Source" Value="love_filled.png"/>
+                                            </DataTrigger>
+                                            <DataTrigger TargetType="ImageButton" 
+                                                     Binding="{Binding ProductIsFav}" Value="False">
+                                                <Setter Property="Source" Value="love_default.png"/>
+                                            </DataTrigger>
+                                        </ImageButton.Triggers>
+                                    </ImageButton>
+
+                                    <Image Source="{Binding image}"
                                        Aspect="AspectFill"
-                                       WidthRequest="110"
-                                       HeightRequest="120"
-                                       VerticalOptions="Center"/>
+                                       WidthRequest="90"
+                                       HeightRequest="100"
+                                       VerticalOptions="End"
+                                       Grid.Row="1"
+                                       BackgroundColor="Transparent"/>
 
-                                <Label Grid.Row="1"
+                                    <Label Grid.Row="2"
                                        Text="{Binding title}"
                                        TextColor="Black"
                                        FontSize="15"
-                                       VerticalOptions="End"/>
-                                <HorizontalStackLayout Grid.Row="2" 
+                                       VerticalOptions="Center"/>
+                                    <HorizontalStackLayout Grid.Row="3" 
                                                        HorizontalOptions="Start"
                                                        VerticalOptions="Center">
-                                    <Label FontSize="17"
+                                        <Label FontSize="17"
                                            VerticalOptions="Center"
                                            HorizontalOptions="Start">
-                                        <Label.FormattedText>
-                                            <FormattedString>
-                                                <Span Text="&#xF155; "
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="&#xF155; "
                                                       FontFamily="Icons"
                                                       TextColor="DarkGoldenrod"/>
 
-                                                <Span Text="{Binding price}"
+                                                    <Span Text="{Binding Price}"
                                                       TextColor="DarkGoldenrod"/>
-                                            </FormattedString>
-                                        </Label.FormattedText>
-                                    </Label>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
 
-                                </HorizontalStackLayout>
-                                
-                                 <Button Grid.Row="2"
+                                    </HorizontalStackLayout>
+
+                                    <Button Grid.Row="3"
                                         HorizontalOptions="End"
                                         VerticalOptions="Center"
                                         Text="&#xE801;"
@@ -271,14 +290,13 @@
                                         BackgroundColor="Transparent"
                                         Padding="10,0,0,0"/>
 
-                            </Grid>
-                        </Frame>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-  
-        </Grid>
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
             
-    </Grid>
-        
+        </Grid>
+    </ScrollView>
 </ContentPage>

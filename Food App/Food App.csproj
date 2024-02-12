@@ -73,9 +73,13 @@
 	  <None Remove="Resources\Images\add.png" />
 	  <None Remove="Resources\Images\burger.png" />
 	  <None Remove="Resources\Images\dessert.png" />
+	  <None Remove="Resources\Images\fav.png" />
 	  <None Remove="Resources\Images\foodlog.jpg" />
 	  <None Remove="Resources\Images\foodlog1.png" />
+	  <None Remove="Resources\Images\home.png" />
 	  <None Remove="Resources\Images\images2.jpg" />
+	  <None Remove="Resources\Images\love_default.png" />
+	  <None Remove="Resources\Images\love_filled.png" />
 	  <None Remove="Resources\Images\pizza.png" />
 	  <None Remove="Resources\Images\promotions.png" />
 	  <None Remove="Resources\Images\substract.png" />
@@ -91,9 +95,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Control\ControlView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
 	  <MauiXaml Update="View\DetailPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

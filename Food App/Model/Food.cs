@@ -1,4 +1,8 @@
-﻿namespace Food_App.Model;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+
+namespace Food_App.Model;
+[INotifyPropertyChanged]
 public partial class Food 
 {
     public int foodID {  get; set; }
@@ -6,12 +10,35 @@ public partial class Food
     public string? title {  get; set; }
     public string? description { get; set; }
     public double rating {  get; set; }
-    public bool favorites {  get; set; }
-    public int price {  get; set; }
-    public int total { get; set; }
     public bool selecte { get; set; }
     public int ingredients { get; set; }
     public int ingredientID { get; set; }
+
+    [ObservableProperty]
+    int price;
+
+    [ObservableProperty]
+    int quantity = 1;
+
+    partial void OnQuantityChanged(int value)
+    {
+        OnPropertyChanged(nameof(SubTotal));
+    }
+    public double SubTotal
+    {
+        get
+        {
+            return Price * Quantity;
+        }
+    }
+
+    [ObservableProperty]
+    public bool productIsFav;
    
+    [RelayCommand]
+    void ProductFav()
+    {
+        ProductIsFav = !ProductIsFav;
+    }
     public Ingredient? ingredient {  get; set; }
 }

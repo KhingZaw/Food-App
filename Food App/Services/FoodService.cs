@@ -20,11 +20,11 @@ public class FoodService
         List<Food> items = new List<Food>()
         {
 
-            new Food(){ foodID = 1 , image ="burger.png",title = "Beef Burger",price = 40,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...",total = 3, rating = 4.5 ,favorites = true,selecte = false,ingredients =1},
-            new Food(){ foodID = 2 , image ="promotions.png",title = "Goat Meat Burger",price = 50,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...",total = 3, rating = 4.5 ,favorites = true,selecte = false,ingredients = 2},
-            new Food(){ foodID = 3 , image ="foodlog1.png",title = "Vegetables Piza",price = 20,total = 3,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", rating = 4.5 ,favorites = true,selecte = false,ingredients = 3},
-            new Food(){ foodID = 4 , image = "pizza.png", title = "Chicken Pizza", price = 30, total = 4,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", rating = 4.5 ,favorites = true,selecte = false,ingredients = 4},
-            new Food(){ foodID = 5 , image = "dessert.png", title = "Dessert", price = 10,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", total = 5, rating = 4.5 ,favorites = true,selecte = false,ingredients = 5},
+            new Food(){ foodID = 1 , image ="burger.png",title = "Beef Burger",Price = 40,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", rating = 4.5 ,selecte = false,ingredients =1,ProductIsFav=true},
+            new Food(){ foodID = 2 , image ="promotions.png",title = "Goat Meat Burger",Price = 50,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...",rating = 4.5,selecte = false,ingredients = 2,ProductIsFav=false},
+            new Food(){ foodID = 3 , image ="foodlog1.png",title = "Vegetables Piza",Price = 20,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", rating = 4.5 ,selecte = false,ingredients = 3,ProductIsFav=false},
+            new Food(){ foodID = 4 , image = "pizza.png", title = "Chicken Pizza", Price = 30,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", rating = 4.5 ,selecte = false,ingredients = 4,ProductIsFav = true},
+            new Food(){ foodID = 5 , image = "dessert.png", title = "Dessert", Price = 10,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", rating = 4.5,selecte = false,ingredients = 5, ProductIsFav = true},
 
         };
         
