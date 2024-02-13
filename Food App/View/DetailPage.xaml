@@ -52,8 +52,8 @@
             
             <Image Source="{Binding Food.image}"
                    Aspect="AspectFit"
-                   WidthRequest="350"
-                   HeightRequest="350"
+                   WidthRequest="300"
+                   HeightRequest="300"
                    HorizontalOptions="Center"
                    VerticalOptions="Center"/>
             
@@ -229,6 +229,7 @@
                                  Clicked="Substract_Tapped"/>
                     <Entry Grid.Column="1" x:Name="CountLabel"
                            Text="{Binding Food.Quantity}"
+                           Keyboard="Numeric"
                            FontSize="22"
                            VerticalOptions="Center" 
                            HorizontalOptions="Center" 

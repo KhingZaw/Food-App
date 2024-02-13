@@ -16,18 +16,19 @@
         
         <ShellContent Title="Home"
                       Icon="home.png"
-                      ContentTemplate="{DataTemplate view:HomePage}"
-                     />
+                      ContentTemplate="{DataTemplate view:HomePage}"/>
 
         <ShellContent Title="Search"
-                   ContentTemplate="{DataTemplate view:HomePage}"/>
+                      Icon="search_icon.png"
+                      ContentTemplate="{DataTemplate view:HomePage}"/>
 
         <ShellContent Title="Favorite"
-                      Icon="fav.png"
-                   ContentTemplate="{DataTemplate view:HomePage}"/>
+                      Icon="favs.png"
+                      ContentTemplate="{DataTemplate view:Favorites}"/>
 
-        <ShellContent Title="History"
-                   ContentTemplate="{DataTemplate view:HomePage}"/>
+        <ShellContent Title="Checkout"
+                      Icon="shopping_icon.png"
+                      ContentTemplate="{DataTemplate view:HomePage}"/>
 
     </TabBar>
 

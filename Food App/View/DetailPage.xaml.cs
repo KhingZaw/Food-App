@@ -1,3 +1,7 @@
+using CommunityToolkit.Mvvm.ComponentModel;
+using Food_App.Model;
+using MvvmHelpers;
+
 namespace Food_App.View;
 
 public partial class DetailPage : ContentPage

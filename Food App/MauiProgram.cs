@@ -37,6 +37,9 @@ namespace Food_App
 
             builder.Services.AddSingleton<DetailViewModel>();
             builder.Services.AddSingleton<DetailPage>();
+            
+            builder.Services.AddSingleton<FavoriteViewModel>();
+            builder.Services.AddSingleton<Favorites>();
 
             return builder.Build();
         }

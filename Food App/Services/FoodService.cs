@@ -15,7 +15,7 @@ public class FoodService
     { 
         this.httpClient = new HttpClient();
     }
-    public Task<List<Food>> GetCategoryAsync()
+    public Task<List<Food>> GetFoodAsync()
     {
         List<Food> items = new List<Food>()
         {

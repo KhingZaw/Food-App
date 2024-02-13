@@ -35,7 +35,7 @@ public partial class HomeViewModel : ObservableObject
     {
         try
         {
-            var food = await _foodService.GetCategoryAsync();
+            var food = await _foodService.GetFoodAsync();
             if (foods.Count > 0)
             {
                 foods.Clear();
