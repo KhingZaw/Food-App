@@ -16,7 +16,8 @@
         
         <ShellContent Title="Home"
                       Icon="home.png"
-                      ContentTemplate="{DataTemplate view:HomePage}"/>
+                      ContentTemplate="{DataTemplate view:HomePage}"
+                      Route="home"/>
 
         <ShellContent Title="Search"
                       Icon="search_icon.png"
@@ -28,7 +29,7 @@
 
         <ShellContent Title="Checkout"
                       Icon="shopping_icon.png"
-                      ContentTemplate="{DataTemplate view:HomePage}"/>
+                      ContentTemplate="{DataTemplate view:CheckOutPage}"/>
 
     </TabBar>
 

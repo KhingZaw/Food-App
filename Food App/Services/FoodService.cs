@@ -24,13 +24,19 @@ public class FoodService
             new Food(){ foodID = 2 , image ="promotions.png",title = "Goat Meat Burger",Price = 50,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...",rating = 4.5,selecte = false,ingredients = 2,ProductIsFav=false},
             new Food(){ foodID = 3 , image ="foodlog1.png",title = "Vegetables Piza",Price = 20,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", rating = 4.5 ,selecte = false,ingredients = 3,ProductIsFav=false},
             new Food(){ foodID = 4 , image = "pizza.png", title = "Chicken Pizza", Price = 30,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", rating = 4.5 ,selecte = false,ingredients = 4,ProductIsFav = true},
-            new Food(){ foodID = 5 , image = "dessert.png", title = "Dessert", Price = 10,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", rating = 4.5,selecte = false,ingredients = 5, ProductIsFav = true},
+            new Food(){ foodID = 5 , image ="burger.png",title = "Beef Burger",Price = 40,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", rating = 4.5 ,selecte = false,ingredients =1,ProductIsFav=true},
+            new Food(){ foodID = 6 , image ="promotions.png",title = "Goat Meat Burger",Price = 50,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...",rating = 4.5,selecte = false,ingredients = 2,ProductIsFav=false},
+            new Food(){ foodID = 7 , image ="foodlog1.png",title = "Vegetables Piza",Price = 20,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", rating = 4.5 ,selecte = false,ingredients = 3,ProductIsFav=false},
+            new Food(){ foodID = 8 , image = "pizza.png", title = "Chicken Pizza", Price = 30,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", rating = 4.5 ,selecte = false,ingredients = 4,ProductIsFav = true},
+            new Food(){ foodID = 9 , image = "dessert.png", title = "Dessert", Price = 10,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", rating = 4.5,selecte = false,ingredients = 5, ProductIsFav = true},
+            new Food(){ foodID = 10 , image ="foodlog1.png",title = "Vegetables Piza",Price = 20,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", rating = 4.5 ,selecte = false,ingredients = 3,ProductIsFav=false},
+            new Food(){ foodID = 11 , image = "pizza.png", title = "Chicken Pizza", Price = 30,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", rating = 4.5 ,selecte = false,ingredients = 4,ProductIsFav = true},
+            new Food(){ foodID = 12, image = "dessert.png", title = "Dessert", Price = 10,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", rating = 4.5,selecte = false,ingredients = 5, ProductIsFav = true},
 
         };
         
         return Task.FromResult(items);
     }
-    
     public Task<List<Ingredient>> GetIngredient()
     {
          List<Ingredient> ingredient = new List<Ingredient>()
@@ -56,8 +62,6 @@ public class FoodService
             new Ingredient { ingredientID = 14 ,ingredients = 5, images ="pizza.png" , name = "Chicken Burger" , selecete=false},
             new Ingredient { ingredientID = 15 ,ingredients = 5, images ="promotions.png" , name = "Goat Meat Burger" , selecete=true},
         };
-
-        //var ingrediented = ingredient.Where(x => x.ingredientID.ToString() == food.ingredientID.ToString());
 
         return Task.FromResult(ingredient);
     }

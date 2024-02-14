@@ -19,7 +19,6 @@ public partial class DetailViewModel : ObservableObject
     public DetailViewModel()
     {
         this._foodService = new FoodService();
-        this.food = new Food();
         LoadIngredientAsync();
     }
 
@@ -38,6 +37,15 @@ public partial class DetailViewModel : ObservableObject
     [RelayCommand]
     async Task GoToBackAsync()
     {
+        await Shell.Current.GoToAsync("..");
+    }
+    [RelayCommand]
+    async Task GoToAddOrderAsync(Food food)
+    {
+        if (Food != null)
+
+        CurrentOrder.AddOrdersAsync(Food);
+
         await Shell.Current.GoToAsync("..");
     }
 }

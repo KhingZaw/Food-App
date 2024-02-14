@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Food_App.View.ControView.Contro"
+             xmlns:m ="clr-namespace:Food_App.Model"
+             x:DataType="m:Food">
+
+    <Frame Padding="0"
+            HasShadow="False"
+            CornerRadius="17"
+            BorderColor="Transparent"
+            BackgroundColor="Transparent">
+
+        <Grid ColumnDefinitions="*,*,*">
+            <ImageButton Grid.Column="0" Source="substract.png"
+                          Aspect="Center"
+                          Background="#886ced"
+                          HeightRequest="23"
+                          WidthRequest="23"
+                          CornerRadius="11"
+                          HorizontalOptions="Start"
+                          Clicked="Substract_Tapped"/>
+
+            <Entry Grid.Column="1" x:Name="CountLabel"
+                    Text="{Binding Quantity}"
+                    Keyboard="Numeric"
+                    FontSize="20"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center"
+                    HeightRequest="45"
+                    WidthRequest="45"
+                    HorizontalTextAlignment="Center"
+                    TextColor="{StaticResource Primary}"
+                    FontFamily="ProximaNovaRegular"/>
+
+            <ImageButton Grid.Column="2" Source="add.png"
+                         Aspect="Center"
+                          Background="#886ced"
+                          HeightRequest="23"
+                          WidthRequest="23"
+                          CornerRadius="11"
+                          HorizontalOptions="End"
+                          Clicked="Add_Tapped"/>
+        </Grid>
+
+    </Frame>
+</ContentView>

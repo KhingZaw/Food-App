@@ -72,6 +72,8 @@
 	  <None Remove="Resources\Fonts\fontello.ttf" />
 	  <None Remove="Resources\Images\add.png" />
 	  <None Remove="Resources\Images\burger.png" />
+	  <None Remove="Resources\Images\delete.png" />
+	  <None Remove="Resources\Images\delete1.png" />
 	  <None Remove="Resources\Images\dessert.png" />
 	  <None Remove="Resources\Images\favs.png" />
 	  <None Remove="Resources\Images\foodlog.jpg" />
@@ -97,6 +99,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="View\CheckOutPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\ControView\Contro.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="View\DetailPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

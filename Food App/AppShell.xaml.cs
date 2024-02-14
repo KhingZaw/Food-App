@@ -14,6 +14,9 @@ namespace Food_App
             Routing.RegisterRoute(nameof(DetailPage),typeof(DetailPage));
             
             Routing.RegisterRoute(nameof(Favorites),typeof(Favorites));
+
+            Routing.RegisterRoute(nameof(CheckOutPage),typeof(CheckOutPage));
+
         }
     }
 }
