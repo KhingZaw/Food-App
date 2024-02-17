@@ -13,15 +13,11 @@
               ContentTemplate="{DataTemplate view:MainPage}"/>-->
     
     <TabBar>
-        
+
         <ShellContent Title="Home"
                       Icon="home.png"
                       ContentTemplate="{DataTemplate view:HomePage}"
                       Route="home"/>
-
-        <ShellContent Title="Search"
-                      Icon="search_icon.png"
-                      ContentTemplate="{DataTemplate view:HomePage}"/>
 
         <ShellContent Title="Favorite"
                       Icon="favs.png"
@@ -30,6 +26,10 @@
         <ShellContent Title="Checkout"
                       Icon="shopping_icon.png"
                       ContentTemplate="{DataTemplate view:CheckOutPage}"/>
+
+        <ShellContent Title="History"
+                      Icon="history.png"
+                      ContentTemplate="{DataTemplate view:HistoriesPage}"/>
 
     </TabBar>
 

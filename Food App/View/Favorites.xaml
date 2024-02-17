@@ -20,11 +20,13 @@
     <Grid RowDefinitions=".1*,*"
           Padding="20,0"
           RowSpacing="5">
+        
         <Label Text="My Favorites"
                TextColor="Black"
                FontSize="25"
                HorizontalTextAlignment="Center"
                VerticalTextAlignment="Center"/>
+        
         <ScrollView Grid.Row="1">
         <CollectionView ItemsSource="{Binding foods}" >
             <CollectionView.ItemsLayout>
@@ -35,7 +37,7 @@
                 <DataTemplate x:DataType="m:Food">
                     <Grid>
                         <Frame BackgroundColor="{StaticResource Secondary}"
-                               WidthRequest="380"
+                               WidthRequest="350"
                                HeightRequest="150"
                                BorderColor="Transparent"
                                Padding="15"
@@ -57,12 +59,14 @@
                                     <Label Text="{Binding title}"
                                            HorizontalOptions="Center"
                                            VerticalOptions="Start"
-                                           FontSize="17"/>
+                                           FontSize="17"
+                                           TextColor="Black"/>
 
                                     <Label Text="{Binding description}"
                                            Grid.Row="1"
                                            HorizontalOptions="Start"
-                                           FontSize="14"/>
+                                           FontSize="14"
+                                           TextColor="Black"/>
                                     
                                         <Label FontSize="15"
                                                Grid.Row="2"
@@ -104,5 +108,6 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
     </ScrollView>
+        
     </Grid>
 </ContentPage>

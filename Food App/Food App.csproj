@@ -78,6 +78,7 @@
 	  <None Remove="Resources\Images\favs.png" />
 	  <None Remove="Resources\Images\foodlog.jpg" />
 	  <None Remove="Resources\Images\foodlog1.png" />
+	  <None Remove="Resources\Images\history.png" />
 	  <None Remove="Resources\Images\home.png" />
 	  <None Remove="Resources\Images\images2.jpg" />
 	  <None Remove="Resources\Images\love_default.png" />
@@ -120,18 +121,12 @@
 	  <MauiXaml Update="View\Favorites.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="View\HistoriesPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="View\HomePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	    <CopyToOutputDirectory></CopyToOutputDirectory>
 	  </MauiXaml>
 	</ItemGroup>
-
-	<PropertyGroup Condition="$(TargetFramework.Contains('-android')) and '$(Configuration)' == 'Release'">
-		<AndroidKeyStore>True</AndroidKeyStore>
-		<AndroidSigningKeyStore>key.keystore</AndroidSigningKeyStore>
-		<AndroidSigningStorePass>123456</AndroidSigningStorePass>
-		<AndroidSigningKeyAlias>MauiAlias</AndroidSigningKeyAlias>
-		<AndroidSigningKeyPass>123456</AndroidSigningKeyPass>
-	</PropertyGroup>
-	
 </Project>

@@ -44,6 +44,9 @@ namespace Food_App
 
             builder.Services.AddTransient<AllFoodsViewModel>();
             builder.Services.AddTransient<AllFoodsPage>();
+            
+            builder.Services.AddTransient<HistoriesPage>();
+            builder.Services.AddTransient<HistoriesViewModel>();
 
             builder.Services.AddTransient<CheckOutViewModel>();
             builder.Services.AddTransient<CheckOutPage>();

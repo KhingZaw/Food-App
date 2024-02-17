@@ -17,10 +17,6 @@
         <mct:StatusBarBehavior StatusBarColor="{StaticResource Secondary}" StatusBarStyle="LightContent"/>
     </ContentPage.Behaviors>
     
-    <ContentPage.BindingContext>
-        <vm:AllFoodsViewModel/>
-    </ContentPage.BindingContext>
-    
     <ContentPage.Triggers>
         <DataTrigger TargetType="ContentPage"
                      Binding="{Binding FromSearch}"
@@ -31,7 +27,7 @@
     
     <Grid RowDefinitions="Auto,*">
         
-        <Border Stroke="Black"
+        <Border Stroke="{StaticResource Gray500}"
                 StrokeThickness="1"
                 HorizontalOptions="Center"
                 WidthRequest="360"
@@ -47,10 +43,12 @@
                        x:Name="searchBar"
                        PlaceholderColor="{StaticResource Gray500}"
                        VerticalOptions="Center"
-                       TextColor="{StaticResource Gray300}"
+                       TextColor="{StaticResource Black}"
                        SearchCommand="{Binding SearchFoodsCommand}"
                        SearchCommandParameter="{Binding Source={x:Reference searchBar},
-                       Path=Text}"/>
+                       Path=Text}"
+                       TextChanged="searchBar_TextChanged"/>
+            
             </Border>
         
         <ScrollView Grid.Row="1"
@@ -60,7 +58,7 @@
                     <CollectionView.ItemTemplate>
                         <DataTemplate x:DataType="m:Food">
                             <Frame BackgroundColor="{StaticResource Gray100}"
-                                   WidthRequest="380"
+                                   WidthRequest="350"
                                    HeightRequest="150"
                                    BorderColor="{StaticResource Gray300}"
                                    Padding="10"

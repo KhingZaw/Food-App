@@ -55,9 +55,9 @@ public partial class AllFoodsViewModel : ObservableObject
 
         Searching = true;
 
-        var food = await _foodService.GetFoodAsync();
-
         string.IsNullOrWhiteSpace(searchTerm);
+
+        var food = await _foodService.GetFoodAsync();
 
         var searchitem = food.Where(p => p.title.Contains(searchTerm, StringComparison.OrdinalIgnoreCase));
 

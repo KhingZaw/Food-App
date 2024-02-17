@@ -64,7 +64,7 @@
                     StrokeThickness="0"
                     StrokeShape="RoundRectangle 75,0,0,0">
 
-                <Grid RowDefinitions=".2*,.2*,.3*,.1*,.05*"
+                <Grid RowDefinitions=".2*,.2*,.3*,.1*,.02*"
                       RowSpacing="7"
                       Padding="30,0">
 
