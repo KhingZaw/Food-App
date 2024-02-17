@@ -44,8 +44,8 @@
             </Grid>
 
             <Grid Grid.Row="1">
-                <Border Stroke="Black"
-                StrokeThickness="0"
+                <Border Stroke="{StaticResource Gray300}"
+                StrokeThickness="1"
                 HorizontalOptions="Center"
                 WidthRequest="360"
                 HeightRequest="50"
@@ -56,11 +56,16 @@
                         <RoundRectangle CornerRadius="50"/>
                     </Border.StrokeShape>
 
-                    <SearchBar HorizontalOptions="Center"
-                       VerticalOptions="Center"
-                       Placeholder="Search ..."
-                       TextColor="Black"
-                       />
+                    <Label HorizontalOptions="Start"
+                           VerticalOptions="Center"
+                           Text="Search here ..."
+                           FontSize="15"
+                           TextColor="Gray"
+                           Padding="20,0"/>
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoToAllFoodsPageCommand}"
+                                              CommandParameter="{x:Boolean true}"/>
+                    </Border.GestureRecognizers>
                 </Border>
             </Grid>
 
@@ -201,12 +206,26 @@
 
             <Grid Grid.Row="4"
               Padding="30,0">
+                
                 <Label Text="Popular"
                    TextColor="Black"
                    FontSize="20"
                    HorizontalOptions="Start"
-                   VerticalOptions="Start"/>
-
+                    VerticalOptions="Start"/>
+                    
+                <Label Text="Viewall"
+                       TextColor="Black"
+                       FontSize="15"
+                       HorizontalOptions="End"
+                       VerticalOptions="Start"
+                       TextDecorations="Underline">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoToAllFoodsPageCommand}"
+                                              CommandParameter="{x:Boolean false}"/>
+                    </Label.GestureRecognizers>
+                        
+                </Label>
+                
                 <CollectionView ItemsSource="{Binding foods}"
                             VerticalOptions="End">
 
@@ -220,6 +239,7 @@
                                HeightRequest="230"
                                CornerRadius="25"
                                HorizontalOptions="Center"
+                               BorderColor="{StaticResource Secondary}"
                                VerticalOptions="End"
                                BackgroundColor="{StaticResource Secondary}"
                                Padding="15">

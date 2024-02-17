@@ -15,9 +15,10 @@ public class FoodService
     { 
         this.httpClient = new HttpClient();
     }
+    public List<Food> items { get; set; }
     public Task<List<Food>> GetFoodAsync()
     {
-        List<Food> items = new List<Food>()
+        items = new List<Food>()
         {
 
             new Food(){ foodID = 1 , image ="burger.png",title = "Beef Burger",Price = 40,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", rating = 4.5 ,selecte = false,ingredients =1,ProductIsFav=true},
@@ -65,5 +66,4 @@ public class FoodService
 
         return Task.FromResult(ingredient);
     }
-
 }

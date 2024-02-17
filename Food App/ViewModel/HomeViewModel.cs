@@ -31,6 +31,17 @@ public partial class HomeViewModel : ObservableObject
     }
 
     [RelayCommand]
+    async Task GoToAllFoodsPageAsync(bool fromSearch = false)
+    {
+        var parameter = new Dictionary<string, object>
+        {
+            [nameof(AllFoodsViewModel.FromSearch)] = fromSearch
+        };
+
+        await Shell.Current.GoToAsync(nameof(AllFoodsPage), true, parameter);
+    }
+
+    [RelayCommand]
     async Task GetFoodsAsync() 
     {
         try

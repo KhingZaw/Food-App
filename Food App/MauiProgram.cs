@@ -11,14 +11,15 @@ namespace Food_App
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
-            builder.UseMauiApp<App>()
+            builder
+            .UseMauiApp<App>()
+            .UseMauiCommunityToolkit()
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("fontello.ttf", "Icons");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-            })
-            .UseMauiCommunityToolkit();
+            });
 
             var services = builder.Services;
 #if DEBUG
@@ -29,20 +30,23 @@ namespace Food_App
 
             services.AddSingleton<FoodService>();
 
-            builder.Services.AddSingleton<MainViewModel>();
-            builder.Services.AddSingleton<MainPage>(); 
+            builder.Services.AddTransient<MainViewModel>();
+            builder.Services.AddTransient<MainPage>(); 
 
-            builder.Services.AddSingleton<HomeViewModel>();
-            builder.Services.AddSingleton<HomePage>();
+            builder.Services.AddTransient<HomeViewModel>();
+            builder.Services.AddTransient<HomePage>();
 
-            builder.Services.AddSingleton<DetailViewModel>();
-            builder.Services.AddSingleton<DetailPage>();
+            builder.Services.AddTransient<DetailViewModel>();
+            builder.Services.AddTransient<DetailPage>();
             
-            builder.Services.AddSingleton<FavoriteViewModel>();
-            builder.Services.AddSingleton<Favorites>();
+            builder.Services.AddTransient<FavoriteViewModel>();
+            builder.Services.AddTransient<Favorites>();
 
-            builder.Services.AddSingleton<CheckOutViewModel>();
-            builder.Services.AddSingleton<CheckOutPage>();
+            builder.Services.AddTransient<AllFoodsViewModel>();
+            builder.Services.AddTransient<AllFoodsPage>();
+
+            builder.Services.AddTransient<CheckOutViewModel>();
+            builder.Services.AddTransient<CheckOutPage>();
 
             return builder.Build();
         }

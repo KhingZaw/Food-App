@@ -99,6 +99,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="View\AllFoodsPage.xaml.cs">
+	    <DependentUpon>AllFoodsPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="View\AllFoodsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="View\CheckOutPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
