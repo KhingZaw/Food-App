@@ -17,6 +17,7 @@
         <toolkit:EventToCommandBehavior Command="{Binding GetFoodsCommand}" EventName="Appearing"/>
         <mct:StatusBarBehavior StatusBarColor="Azure" StatusBarStyle="LightContent"/>
     </ContentPage.Behaviors>
+    
     <ScrollView>
         <Grid RowDefinitions=".1*,.2*,.3*,.6*,.8*,.0*"
           RowSpacing="19">
@@ -280,6 +281,7 @@
                                        TextColor="Black"
                                        FontSize="15"
                                        VerticalOptions="Center"/>
+                                    
                                     <HorizontalStackLayout Grid.Row="3" 
                                                        HorizontalOptions="Start"
                                                        VerticalOptions="Center">
@@ -308,7 +310,10 @@
                                         TextColor="Green"
                                         FontSize="30"
                                         BackgroundColor="Transparent"
-                                        Padding="10,0,0,0"/>
+                                        Padding="10,0,0,0"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type mv:HomeViewModel}}, Path=GoToAddOrderCommand}"
+                                        CommandParameter="{Binding .}"
+                                        />
 
                                 </Grid>
                             </Frame>
@@ -320,3 +325,4 @@
         </Grid>
     </ScrollView>
 </ContentPage>
+    

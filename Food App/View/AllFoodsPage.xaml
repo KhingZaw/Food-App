@@ -9,12 +9,12 @@
              xmlns:vm ="clr-namespace:Food_App.ViewModel"
              xmlns:m="clr-namespace:Food_App.Model"
              Shell.NavBarIsVisible="True"
-             BackgroundColor="{StaticResource Secondary}"
-             Shell.BackgroundColor="{StaticResource Secondary}">
-
+             BackgroundColor="Azure"
+             Shell.BackgroundColor="Azure">
+  
     <ContentPage.Behaviors>
         <toolkit:EventToCommandBehavior Command="{Binding GetFoodsCommand}" EventName="Appearing"/>
-        <mct:StatusBarBehavior StatusBarColor="{StaticResource Secondary}" StatusBarStyle="LightContent"/>
+        <mct:StatusBarBehavior StatusBarColor="Azure" StatusBarStyle="LightContent"/>
     </ContentPage.Behaviors>
     
     <ContentPage.Triggers>
@@ -33,7 +33,7 @@
                 WidthRequest="360"
                 HeightRequest="50"
                 VerticalOptions="Center"
-                BackgroundColor="{StaticResource Gray100}">
+                BackgroundColor="{StaticResource Secondary}">
             
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="50"/>
@@ -55,9 +55,13 @@
                     Margin="5">
             <VerticalStackLayout >
                 <CollectionView ItemsSource="{Binding foods}">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical"
+                                           ItemSpacing="2"/>
+                    </CollectionView.ItemsLayout>
                     <CollectionView.ItemTemplate>
                         <DataTemplate x:DataType="m:Food">
-                            <Frame BackgroundColor="{StaticResource Gray100}"
+                            <Frame BackgroundColor="{StaticResource Secondary}"
                                    WidthRequest="350"
                                    HeightRequest="150"
                                    BorderColor="{StaticResource Gray300}"
@@ -127,10 +131,34 @@
                             </Frame>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
+
+                    <CollectionView.EmptyView>
+                        <VerticalStackLayout HorizontalOptions="Center"
+                                             VerticalOptions="Center">
+                            <BoxView HeightRequest="100"
+                                     Color="Transparent"/>
+                            <Label Text="No pizza found"
+                                   TextColor="Gray"
+                                   FontSize="25"
+                                   HorizontalTextAlignment="Center">
+                                <Label.Triggers>
+                                    <DataTrigger TargetType="Label"
+                                                 Binding="{Binding Searching}"
+                                                 Value="true">
+                                        <Setter Property="Text" Value="Searching ..."/>
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+                        </VerticalStackLayout>
+                    </CollectionView.EmptyView>
                 </CollectionView>
             </VerticalStackLayout>
         </ScrollView>
-            
+
+        <ActivityIndicator Grid.Row="2"
+                           IsRunning="{Binding Searching}"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
     </Grid>
           
     

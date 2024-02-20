@@ -11,8 +11,8 @@ public class FoodService
 {
     HttpClient httpClient;
 
-    public FoodService() 
-    { 
+    public FoodService()
+    {
         this.httpClient = new HttpClient();
     }
     public Task<List<Food>> GetFoodAsync()
@@ -20,7 +20,7 @@ public class FoodService
         List<Food> items = new List<Food>()
         {
 
-            new Food(){ foodID = 1 , image ="burger.png",title = "Beef Burger",Price = 40,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", rating = 4.5 ,selecte = false,ingredients =1,ProductIsFav=true},
+            new Food(){ foodID = 1 , image ="burger.png",title = "Beef Burger",Price = 40,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", rating = 4.5 ,selecte = false,ingredients =1,ProductIsFav = true},
             new Food(){ foodID = 2 , image ="promotions.png",title = "Goat Meat Burger",Price = 50,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...",rating = 4.5,selecte = false,ingredients = 2,ProductIsFav=false},
             new Food(){ foodID = 3 , image ="foodlog1.png",title = "Vegetables Piza",Price = 20,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", rating = 4.5 ,selecte = false,ingredients = 3,ProductIsFav=false},
             new Food(){ foodID = 4 , image = "pizza.png", title = "Chicken Pizza", Price = 30,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", rating = 4.5 ,selecte = false,ingredients = 4,ProductIsFav = true},
@@ -34,12 +34,13 @@ public class FoodService
             new Food(){ foodID = 12, image = "dessert.png", title = "Dessert", Price = 10,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", rating = 4.5,selecte = false,ingredients = 5, ProductIsFav = true},
 
         };
-        
+
         return Task.FromResult(items);
     }
+
     public Task<List<Ingredient>> GetIngredient()
     {
-         List<Ingredient> ingredient = new List<Ingredient>()
+        List<Ingredient> ingredient = new List<Ingredient>()
         {
 
             new Ingredient { ingredientID = 1 ,ingredients = 1, images ="burger.png" , name = "Beef Burger" , selecete=true},
@@ -65,4 +66,5 @@ public class FoodService
 
         return Task.FromResult(ingredient);
     }
+
 }

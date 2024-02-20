@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Food_App.Model;
 using Food_App.Services;
@@ -12,7 +13,7 @@ public partial class DetailViewModel : ObservableObject
     [ObservableProperty]
     Food food;
 
-    public ObservableRangeCollection<Ingredient> Items { get; set; } = new();
+    public ObservableRangeCollection<Ingredient> Items { get; set; } = new ();
 
     FoodService _foodService;
 
@@ -39,6 +40,7 @@ public partial class DetailViewModel : ObservableObject
     {
         await Shell.Current.GoToAsync("..");
     }
+
     [RelayCommand]
     async Task GoToAddOrderAsync(Food food)
     {
@@ -46,6 +48,11 @@ public partial class DetailViewModel : ObservableObject
 
         CurrentOrder.AddOrdersAsync(Food);
 
-        await Shell.Current.GoToAsync("..");
+        var toast =  Toast.Make("Is Successful.");
+
+        var cts = new CancellationTokenSource(TimeSpan.FromSeconds(10));
+
+        await toast.Show(cts.Token);
+
     }
 }

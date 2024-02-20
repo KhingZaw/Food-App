@@ -4,8 +4,6 @@ using Food_App.Model;
 using Food_App.Services;
 using Food_App.View;
 using MvvmHelpers;
-using System.Collections.ObjectModel;
-using System.Runtime.CompilerServices;
 using ObservableObject = CommunityToolkit.Mvvm.ComponentModel.ObservableObject;
 
 namespace Food_App.ViewModel;
@@ -21,6 +19,7 @@ public partial class AllFoodsViewModel : ObservableObject
     public AllFoodsViewModel()
     {
         this._foodService = new FoodService();
+       
     }
     [ObservableProperty]
     private bool _fromSearch;
@@ -56,6 +55,8 @@ public partial class AllFoodsViewModel : ObservableObject
         Searching = true;
 
         string.IsNullOrWhiteSpace(searchTerm);
+
+        await Task.Delay(1000);
 
         var food = await _foodService.GetFoodAsync();
 

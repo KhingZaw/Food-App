@@ -15,6 +15,9 @@ public partial class Food
     public int ingredientID { get; set; }
 
     [ObservableProperty]
+    public bool productIsFav;
+
+    [ObservableProperty]
     int price;
 
     [ObservableProperty]
@@ -32,9 +35,7 @@ public partial class Food
         }
     }
 
-    [ObservableProperty]
-    public bool productIsFav;
-   
+
     [RelayCommand]
     void ProductFav()
     {

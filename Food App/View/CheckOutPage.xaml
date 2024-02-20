@@ -8,11 +8,11 @@
              xmlns:mct="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
              xmlns:vm="clr-namespace:Food_App.ViewModel"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             BackgroundColor="White">
+             BackgroundColor="Azure">
 
     <ContentPage.Behaviors>
         <toolkit:EventToCommandBehavior Command="{Binding GetOrdersCommand}" EventName="Appearing"/>
-        <mct:StatusBarBehavior StatusBarColor="White" StatusBarStyle="LightContent"/>
+        <mct:StatusBarBehavior StatusBarColor="Azure" StatusBarStyle="LightContent"/>
     </ContentPage.Behaviors>
 
     <ContentPage.BindingContext>
@@ -170,9 +170,9 @@
         </Grid>
 
         <Button Grid.Row="4"
-                BackgroundColor="{StaticResource Primary}"
+                BackgroundColor="#886ced"
                 WidthRequest="300"
-                HeightRequest="60"
+                HeightRequest="60" 
                 Text="CheckOut"
                 FontSize="20"
                 TextColor="White"

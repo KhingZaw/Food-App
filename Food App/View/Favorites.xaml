@@ -7,7 +7,8 @@
              xmlns:m ="clr-namespace:Food_App.Model"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:vm ="clr-namespace:Food_App.ViewModel"
-             BackgroundColor="Azure">
+             BackgroundColor="Azure"
+             x:DataType="vm:FavoriteViewModel">
 
     <ContentPage.Behaviors>
         <toolkit:EventToCommandBehavior Command="{Binding GetFavsCommand}" EventName="Appearing"/>
@@ -17,7 +18,8 @@
     <ContentPage.BindingContext>
         <vm:FavoriteViewModel />
     </ContentPage.BindingContext>
-    <Grid RowDefinitions=".1*,*"
+    
+    <Grid RowDefinitions=".07*,*"
           Padding="20,0"
           RowSpacing="5">
         
@@ -28,7 +30,7 @@
                VerticalTextAlignment="Center"/>
         
         <ScrollView Grid.Row="1">
-        <CollectionView ItemsSource="{Binding foods}" >
+        <CollectionView ItemsSource="{Binding foodfav}" >
             <CollectionView.ItemsLayout>
                  <LinearItemsLayout Orientation="Vertical"
                                     ItemSpacing="10"/>
@@ -83,8 +85,27 @@
                                                 </FormattedString>
                                             </Label.FormattedText>
                                         </Label>
-                                    
-                                        <Label FontSize="15"
+
+                                        <ImageButton HorizontalOptions="End"
+                                                     WidthRequest="50"
+                                                     HeightRequest="23"
+                                                    VerticalOptions="Center"
+                                                    Source="love_filled.png" 
+                                                    Padding="0"
+                                                    Command="{Binding Source={RelativeSource AncestorType={x:Type vm:FavoriteViewModel}}, Path=ProductFavCommand}"
+                                                    CommandParameter="{Binding .}">
+                                            <ImageButton.Triggers>
+                                                <DataTrigger TargetType="ImageButton" 
+                                                             Binding="{Binding ProductIsFav}" Value="True">
+                                                    <Setter Property="Source" Value="love_filled.png"/>
+                                                </DataTrigger>
+                                                <DataTrigger TargetType="ImageButton" 
+                                                             Binding="{Binding ProductIsFav}" Value="False">
+                                                    <Setter Property="Source" Value="love_default.png"/>
+                                                </DataTrigger>
+                                            </ImageButton.Triggers>
+                                        </ImageButton>
+                                        <!--<Label FontSize="15"
                                                Grid.Row="2"
                                                VerticalOptions="Center"
                                                HorizontalOptions="End">
@@ -94,11 +115,11 @@
                                                           FontFamily="Icons"
                                                           TextColor="DarkGoldenrod"/>
 
-                                                    <Span Text="{Binding Price}"
+                                                    <Span Text="{Binding .}"
                                                           TextColor="DarkGoldenrod"/>
                                                 </FormattedString>
                                             </Label.FormattedText>
-                                        </Label>
+                                        </Label>-->
 
                                     </Grid>
                             </Grid>
@@ -109,5 +130,9 @@
         </CollectionView>
     </ScrollView>
         
+        <ActivityIndicator IsRunning="{Binding IsBusy}"
+                           Grid.Row="2"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"/>
     </Grid>
 </ContentPage>

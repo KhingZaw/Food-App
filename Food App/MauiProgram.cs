@@ -51,6 +51,7 @@ namespace Food_App
             builder.Services.AddTransient<CheckOutViewModel>();
             builder.Services.AddTransient<CheckOutPage>();
 
+
             return builder.Build();
         }
     }

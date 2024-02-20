@@ -8,18 +8,18 @@
              Title="DetailPage"
              xmlns:model="clr-namespace:Food_App.Model"
              Shell.TabBarIsVisible="True"
-             BackgroundColor="#886ced"
-             x:DataType="mv:DetailViewModel">
+             x:DataType="mv:DetailViewModel"
+             BackgroundColor="{StaticResource PrimaryDark}">
 
     <ContentPage.BindingContext>
         <mv:DetailViewModel/>
     </ContentPage.BindingContext>
 
     <ContentPage.Behaviors>
-        <mct:StatusBarBehavior StatusBarColor="#886ced" StatusBarStyle="LightContent"/>
+        <mct:StatusBarBehavior StatusBarColor="{StaticResource PrimaryDark}" StatusBarStyle="LightContent"/>
     </ContentPage.Behaviors>
     <ScrollView>
-    <Grid RowDefinitions=".20*,.30*">
+    <Grid RowDefinitions=".20*,.25*">
 
         <Grid>
             <Grid Padding="15" 
@@ -27,25 +27,30 @@
 
                 <Button Text="&#xE806;"
                     FontFamily="Icons"
-                    TextColor="White"
+                    TextColor="{StaticResource Gray600}"
                     Command="{Binding GoToBackCommand}"
                     FontSize="25"
                     HorizontalOptions="Start"
                     BackgroundColor="Transparent"
                     />
 
-                <ImageButton HorizontalOptions="End">
-                    <ImageButton.Triggers>
-                        <DataTrigger TargetType="ImageButton" 
+                <Image HorizontalOptions="End"
+                             VerticalOptions="Start"
+                             WidthRequest="50"
+                             HeightRequest="25"
+                             Source="love_filled.png" 
+                             >
+                    <Image.Triggers>
+                        <DataTrigger TargetType="Image" 
                                       Binding="{Binding Food.ProductIsFav}" Value="True">
                             <Setter Property="Source" Value="love_filled.png"/>
                         </DataTrigger>
-                        <DataTrigger TargetType="ImageButton" 
+                        <DataTrigger TargetType="Image" 
                                      Binding="{Binding Food.ProductIsFav}" Value="False">
                             <Setter Property="Source" Value="love_default.png"/>
                         </DataTrigger>
-                    </ImageButton.Triggers>
-                </ImageButton>
+                    </Image.Triggers>
+                </Image>
                 
             </Grid>
             
