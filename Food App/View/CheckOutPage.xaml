@@ -39,7 +39,7 @@
 
         <Grid Grid.Row="1">
             <ScrollView>
-                <CollectionView ItemsSource="{Binding Order.Currentitems}">
+                <CollectionView ItemsSource="{Binding orders}">
 
                     <CollectionView.ItemsLayout>
                         <LinearItemsLayout Orientation="Vertical"
@@ -61,7 +61,7 @@
                                         <SwipeItems>
                                             <SwipeItem Text="Delete" 
                                                        BackgroundColor="Red"
-                                                       Command="{Binding Source={RelativeSource AncestorType={x:Type vm:CheckOutViewModel}},Path=DeletedOrderCommand}"
+                                                       Command="{Binding Source={RelativeSource AncestorType={x:Type vm:CheckOutViewModel}}}"
                                                        CommandParameter="{Binding .}"/>
                                         </SwipeItems>
                                     </SwipeView.RightItems>
@@ -72,7 +72,7 @@
                                          Padding="0"
                                          HeightRequest="120"
                                          BackgroundColor="{StaticResource Secondary}">
-                                            <Image Source="{Binding image}"
+                                            <Image Source="{Binding Image}"
                                            Aspect="AspectFit"
                                            WidthRequest="130"/>
                                         </Frame>
@@ -83,7 +83,7 @@
 
                                             <VerticalStackLayout Spacing="10"
                                                          HorizontalOptions="Start">
-                                                <Label Text="{Binding title}"
+                                                <Label Text="{Binding Title}"
                                                    FontSize="19"
                                                    TextColor="Black"
                                                    VerticalOptions="Start"/>

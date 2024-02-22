@@ -54,7 +54,7 @@
                 
             </Grid>
             
-            <Image Source="{Binding Food.image}"
+            <Image Source="{Binding Food.Image}"
                    Aspect="AspectFit"
                    WidthRequest="300"
                    HeightRequest="300"
@@ -89,7 +89,7 @@
                                     <Span Text="&#xE803; "
                                           FontFamily="Icons"
                                           TextColor="DarkGoldenrod"/>
-                                    <Span Text="{Binding Food.rating}"
+                                    <Span Text="{Binding Food.Rating}"
                                           TextColor="White"/>
                                 </FormattedString>
                             </Label.FormattedText>
@@ -116,7 +116,7 @@
 
                         <VerticalStackLayout Spacing="10">
 
-                            <Label Text="{Binding Food.title}"
+                            <Label Text="{Binding Food.Title}"
                                TextColor="Black"
                                FontSize="20"
                                HorizontalOptions="Start"
@@ -127,7 +127,7 @@
                                     <FormattedString >
 
                                         <Span FontFamily="RubikRegular"
-                                              Text="{Binding Food.description}"
+                                              Text="{Binding Food.Description}"
                                               TextColor="#a48af6"/>
 
                                         <Span FontFamily="RubikLight"
@@ -172,7 +172,7 @@
                                            VerticalOptions="Center"
                                            HorizontalOptions="Center">
                                                 <Grid>
-                                                    <Image Source="{Binding images}"
+                                                    <Image Source="{Binding Images}"
                                                            Aspect="AspectFill"
                                                            WidthRequest="70"
                                                            HeightRequest="70"

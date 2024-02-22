@@ -60,7 +60,7 @@ public partial class AllFoodsViewModel : ObservableObject
 
         var food = await _foodService.GetFoodAsync();
 
-        var searchitem = food.Where(p => p.title.Contains(searchTerm, StringComparison.OrdinalIgnoreCase));
+        var searchitem = food.Where(p => p.Title.Contains(searchTerm, StringComparison.OrdinalIgnoreCase));
 
         if (searchitem != null)
         {

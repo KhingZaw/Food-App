@@ -51,20 +51,20 @@
                                 <Grid ColumnDefinitions=".3*,.7*"
                                   ColumnSpacing="20">
 
-                                <Image Source="{Binding image}"
+                                <Image Source="{Binding Image}"
                                        Aspect="AspectFill"/>
 
                                 <Grid Grid.Column="1"
                                       RowDefinitions=".1*,.3*,.1*"
                                       RowSpacing="5">
 
-                                    <Label Text="{Binding title}"
+                                    <Label Text="{Binding Title}"
                                            HorizontalOptions="Center"
                                            VerticalOptions="Start"
                                            FontSize="17"
                                            TextColor="Black"/>
 
-                                    <Label Text="{Binding description}"
+                                    <Label Text="{Binding Description}"
                                            Grid.Row="1"
                                            HorizontalOptions="Start"
                                            FontSize="14"
@@ -80,7 +80,7 @@
                                                            FontFamily="Icons"
                                                            TextColor="DarkGoldenrod"/>
                                                     
-                                                    <Span Text="{Binding rating}"
+                                                    <Span Text="{Binding Rating}"
                                                           TextColor="Black"/>
                                                 </FormattedString>
                                             </Label.FormattedText>

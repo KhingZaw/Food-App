@@ -19,6 +19,8 @@ namespace Food_App
 
             Routing.RegisterRoute(nameof(CheckOutPage),typeof(CheckOutPage));
 
+            Routing.RegisterRoute(nameof(ProfilePage),typeof(ProfilePage));
+
         }
     }
 }

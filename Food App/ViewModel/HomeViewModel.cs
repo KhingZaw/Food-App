@@ -5,6 +5,7 @@ using Food_App.Model;
 using Food_App.Services;
 using Food_App.View;
 using MvvmHelpers;
+using PointOfSale.Service;
 using System.ComponentModel;
 using System.Diagnostics;
 
@@ -14,13 +15,13 @@ namespace Food_App.ViewModel;
 public partial class HomeViewModel
 {
     FoodService _foodService;
-
+    FoodsDatabase _foodsDatabase;
     public ObservableRangeCollection<Food> foods {get; set; } = new();
 
     public HomeViewModel()
     {
         this._foodService = new FoodService();
-        
+        this._foodsDatabase = new FoodsDatabase();
     }
 
     [RelayCommand]
@@ -31,6 +32,12 @@ public partial class HomeViewModel
         {
             {"Food" , food }
         });
+    }
+
+    [RelayCommand]
+    async Task GoToProfileAsync()
+    {
+        await Shell.Current.GoToAsync(nameof(ProfilePage));
     }
 
     [RelayCommand]
@@ -48,13 +55,13 @@ public partial class HomeViewModel
     [RelayCommand]
     async Task GoToAddOrderAsync(Food food)
     {
-        var result = await Shell.Current.DisplayAlert("Add Order", $"Are you want to add order \"{food.title}\"?", "Ok", "Cancel");
+        var result = await Shell.Current.DisplayAlert("Add Order", $"Are you want to add order \"{food.Title}\"?", "Ok", "Cancel");
         
         if(result is true)
         {
             try
             {
-                CurrentOrder.AddOrdersAsync(food);
+                await _foodsDatabase.AddItemAsync(food);
 
                 var toast = Toast.Make("Add Order is Successful.");
 

@@ -1,15 +1,17 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Food_App.Model;
+using MvvmHelpers;
+using PointOfSale.Service;
+using System.Collections.ObjectModel;
 
 namespace Food_App.ViewModel;
 
 [INotifyPropertyChanged]
 public partial class CheckOutViewModel
 {
-    [ObservableProperty]
-    Order order;
-
+    public ObservableRangeCollection<List<Order>> orders { get; set; } = new();
+    //public ObservableCollection<List<Food>> foods { get; set; } = new();
     public CheckOutViewModel()
     {
     }
@@ -19,22 +21,27 @@ public partial class CheckOutViewModel
         await Shell.Current.GoToAsync("..");
     }
 
-    [RelayCommand]
-    async Task DeletedOrderAsync(Food foodID)
-    {
-        var Orders = Order.Currentitems.Remove(foodID);
+    //[RelayCommand]
+    //async Task DeletedOrderAsync(Order oriderID)
+    //{
+    //    var Orders = orders.Remove(foo);
 
-        return;
-    }
+    //    return;
+    //}
 
     [RelayCommand]
     async Task GetOrdersAsync()
     {
-        Order = CurrentOrder.CurrentOrders;
+        if (orders.Count > 0)
+            orders.Clear();
 
-        if (Order == null) 
+        var order = FoodsDatabase.Orders;
+
+        if (order == null) 
         {
-            Order.Currentitems = new List<Food>();
+            order = new List<Order>();
         }
+
+        orders.Add(order);
     }
 }

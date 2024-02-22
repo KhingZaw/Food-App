@@ -1,18 +1,31 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using SQLite;
+using SQLiteNetExtensions.Attributes;
 
 namespace Food_App.Model;
+
 [INotifyPropertyChanged]
-public partial class Food 
+[Table("Food")]
+public partial class Food
 {
-    public int foodID {  get; set; }
-    public string? image {  get; set; }
-    public string title {  get; set; }
-    public string? description { get; set; }
-    public double rating {  get; set; }
-    public bool selecte { get; set; }
-    public int ingredients { get; set; }
-    public int ingredientID { get; set; }
+    [PrimaryKey, AutoIncrement]
+    public int FoodID {  get; set; }
+    public string? Image {  get; set; }
+    public string Title {  get; set; }
+    public string? Description { get; set; }
+    public double Rating {  get; set; }
+    public bool Selecte { get; set; }
+    public int Ingredients { get; set; }
+
+    [ForeignKey(typeof(Order))]
+    public int OrderID { get; set; }
+
+    [ManyToOne(CascadeOperations = CascadeOperation.All)]
+    public Order Order { get; set; }
+
+    [OneToMany(CascadeOperations = CascadeOperation.All)]
+    public List<Ingredient> Ingredient { get; set; }
 
     [ObservableProperty]
     public bool productIsFav;
@@ -41,5 +54,6 @@ public partial class Food
     {
         ProductIsFav = !ProductIsFav;
     }
-    public Ingredient? ingredient {  get; set; }
+
+   
 }

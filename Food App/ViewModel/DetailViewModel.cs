@@ -4,6 +4,7 @@ using CommunityToolkit.Mvvm.Input;
 using Food_App.Model;
 using Food_App.Services;
 using MvvmHelpers;
+using PointOfSale.Service;
 using ObservableObject = CommunityToolkit.Mvvm.ComponentModel.ObservableObject;
 namespace Food_App.ViewModel;
 
@@ -46,7 +47,7 @@ public partial class DetailViewModel : ObservableObject
     {
         if (Food != null)
 
-        CurrentOrder.AddOrdersAsync(Food);
+        FoodsDatabase.AddOrderItemsAsync(Food);
 
         var toast =  Toast.Make("Is Successful.");
 

@@ -20,18 +20,18 @@ public class FoodService
         List<Food> items = new List<Food>()
         {
 
-            new Food(){ foodID = 1 , image ="burger.png",title = "Beef Burger",Price = 40,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", rating = 4.5 ,selecte = false,ingredients =1,ProductIsFav = true},
-            new Food(){ foodID = 2 , image ="promotions.png",title = "Goat Meat Burger",Price = 50,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...",rating = 4.5,selecte = false,ingredients = 2,ProductIsFav=false},
-            new Food(){ foodID = 3 , image ="foodlog1.png",title = "Vegetables Piza",Price = 20,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", rating = 4.5 ,selecte = false,ingredients = 3,ProductIsFav=false},
-            new Food(){ foodID = 4 , image = "pizza.png", title = "Chicken Pizza", Price = 30,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", rating = 4.5 ,selecte = false,ingredients = 4,ProductIsFav = true},
-            new Food(){ foodID = 5 , image ="burger.png",title = "Beef Burger",Price = 40,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", rating = 4.5 ,selecte = false,ingredients =1,ProductIsFav=true},
-            new Food(){ foodID = 6 , image ="promotions.png",title = "Goat Meat Burger",Price = 50,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...",rating = 4.5,selecte = false,ingredients = 2,ProductIsFav=false},
-            new Food(){ foodID = 7 , image ="foodlog1.png",title = "Vegetables Piza",Price = 20,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", rating = 4.5 ,selecte = false,ingredients = 3,ProductIsFav=false},
-            new Food(){ foodID = 8 , image = "pizza.png", title = "Chicken Pizza", Price = 30,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", rating = 4.5 ,selecte = false,ingredients = 4,ProductIsFav = true},
-            new Food(){ foodID = 9 , image = "dessert.png", title = "Dessert", Price = 10,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", rating = 4.5,selecte = false,ingredients = 5, ProductIsFav = true},
-            new Food(){ foodID = 10 , image ="foodlog1.png",title = "Vegetables Piza",Price = 20,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", rating = 4.5 ,selecte = false,ingredients = 3,ProductIsFav=false},
-            new Food(){ foodID = 11 , image = "pizza.png", title = "Chicken Pizza", Price = 30,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", rating = 4.5 ,selecte = false,ingredients = 4,ProductIsFav = true},
-            new Food(){ foodID = 12, image = "dessert.png", title = "Dessert", Price = 10,description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", rating = 4.5,selecte = false,ingredients = 5, ProductIsFav = true},
+            new Food(){ FoodID = 1 , Image ="burger.png",Title = "Beef Burger",Price = 40,Description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", Rating = 4.5 ,Selecte = false,Ingredients =1,ProductIsFav = true},
+            new Food(){ FoodID = 2 , Image ="promotions.png",Title = "Goat Meat Burger",Price = 50,Description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...",Rating = 4.5,Selecte = false,Ingredients = 2,ProductIsFav=false},
+            new Food(){ FoodID = 3 , Image ="foodlog1.png",Title = "Vegetables Piza",Price = 20,Description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", Rating = 4.5 ,Selecte = false,Ingredients = 3,ProductIsFav=false},
+            new Food(){ FoodID = 4 , Image = "pizza.png", Title = "Chicken Pizza", Price = 30,Description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", Rating = 4.5 ,Selecte = false,Ingredients = 4,ProductIsFav = true},
+            new Food(){ FoodID = 5 , Image ="burger.png",Title = "Beef Burger",Price = 40,Description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", Rating = 4.5 ,Selecte = false,Ingredients =1,ProductIsFav=true},
+            new Food(){ FoodID = 6 , Image ="promotions.png",Title = "Goat Meat Burger",Price = 50,Description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...",Rating = 4.5,Selecte = false,Ingredients = 2,ProductIsFav=false},
+            new Food(){ FoodID = 7 , Image ="foodlog1.png",Title = "Vegetables Piza",Price = 20,Description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", Rating = 4.5 ,Selecte = false,Ingredients = 3,ProductIsFav=false},
+            new Food(){ FoodID = 8 , Image = "pizza.png", Title = "Chicken Pizza", Price = 30,Description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", Rating = 4.5 ,Selecte = false,Ingredients = 4,ProductIsFav = true},
+            new Food(){ FoodID = 9 , Image = "dessert.png", Title = "Dessert", Price = 10,Description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", Rating = 4.5,Selecte = false,Ingredients = 5, ProductIsFav = true},
+            new Food(){ FoodID = 10 , Image ="foodlog1.png",Title = "Vegetables Piza",Price = 20,Description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", Rating = 4.5 ,Selecte = false,Ingredients = 3,ProductIsFav=false},
+            new Food(){ FoodID = 11 , Image = "pizza.png", Title = "Chicken Pizza", Price = 30,Description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", Rating = 4.5 ,Selecte = false,Ingredients = 4,ProductIsFav = true},
+            new Food(){ FoodID = 12, Image = "dessert.png", Title = "Dessert", Price = 10,Description="Be inspired by our juicy, flavour-packed beef burger recipes– stack them up on buns with cheese, bacon, lettuce and more...", Rating = 4.5,Selecte = false,Ingredients = 5, ProductIsFav = true},
 
         };
 
@@ -43,25 +43,25 @@ public class FoodService
         List<Ingredient> ingredient = new List<Ingredient>()
         {
 
-            new Ingredient { ingredientID = 1 ,ingredients = 1, images ="burger.png" , name = "Beef Burger" , selecete=true},
-            new Ingredient { ingredientID = 2 ,ingredients = 1, images ="foodlog1.png" , name = "Vegetables Burger" , selecete=false},
-            new Ingredient { ingredientID = 3 ,ingredients = 1, images ="dessert.png" , name = "Dessert" , selecete=true},
+            new Ingredient { IngredientID = 1 , Images ="burger.png" , Name = "Beef Burger" , Selecete=true},
+            new Ingredient { IngredientID = 2 , Images ="foodlog1.png" , Name = "Vegetables Burger" , Selecete=false},
+            new Ingredient { IngredientID = 3, Images ="dessert.png" , Name = "Dessert" , Selecete=true},
 
-            new Ingredient { ingredientID = 4 ,ingredients = 2, images ="pizza.png" , name = "Chicken Burger" , selecete=true},
-            new Ingredient { ingredientID = 5 ,ingredients = 2, images ="promotions.png" , name = "Goat Meat Burger" , selecete=false},
-            new Ingredient { ingredientID = 6 ,ingredients = 2, images ="burger.png" , name = "Beef Burger" , selecete=true},
+            new Ingredient { IngredientID = 4, Images ="pizza.png" , Name = "Chicken Burger" , Selecete=true},
+            new Ingredient { IngredientID = 5, Images ="promotions.png" , Name = "Goat Meat Burger" , Selecete=false},
+            new Ingredient { IngredientID = 6, Images ="burger.png" , Name = "Beef Burger" , Selecete=true},
 
-            new Ingredient { ingredientID = 7 ,ingredients = 3, images ="foodlog1.png" , name = "Vegetables Burger" , selecete=true},
-            new Ingredient { ingredientID = 8 ,ingredients = 3, images ="dessert.png" , name = "Dessert" , selecete=false},
-            new Ingredient { ingredientID = 9 ,ingredients = 3, images ="pizza.png" , name = "Chicken Burger" , selecete=true},
+            new Ingredient { IngredientID = 7, Images ="foodlog1.png" , Name = "Vegetables Burger" , Selecete=true},
+            new Ingredient { IngredientID = 8, Images ="dessert.png" , Name = "Dessert" , Selecete=false},
+            new Ingredient { IngredientID = 9, Images ="pizza.png" , Name = "Chicken Burger" , Selecete=true},
 
-            new Ingredient { ingredientID = 10 ,ingredients = 4, images ="promotions.png" , name = "Goat Meat Burger" , selecete=true},
-            new Ingredient { ingredientID = 11 ,ingredients = 4, images ="burger.png" , name = "Beef Burger" , selecete=false},
-            new Ingredient { ingredientID = 12 ,ingredients = 4, images ="foodlog1.png" , name = "Vegetables Burger" , selecete=true},
+            new Ingredient { IngredientID = 10, Images ="promotions.png" , Name = "Goat Meat Burger" , Selecete=true},
+            new Ingredient { IngredientID = 11, Images ="burger.png" , Name = "Beef Burger" , Selecete=false},
+            new Ingredient { IngredientID = 12, Images ="foodlog1.png" , Name = "Vegetables Burger" , Selecete=true},
 
-            new Ingredient { ingredientID = 13 ,ingredients = 5, images ="dessert.png" , name = "Dessert" , selecete=true},
-            new Ingredient { ingredientID = 14 ,ingredients = 5, images ="pizza.png" , name = "Chicken Burger" , selecete=false},
-            new Ingredient { ingredientID = 15 ,ingredients = 5, images ="promotions.png" , name = "Goat Meat Burger" , selecete=true},
+            new Ingredient { IngredientID = 13, Images ="dessert.png" , Name = "Dessert" , Selecete=true},
+            new Ingredient { IngredientID = 14, Images ="pizza.png" , Name = "Chicken Burger" , Selecete=false},
+            new Ingredient { IngredientID = 15, Images ="promotions.png" , Name = "Goat Meat Burger" , Selecete=true},
         };
 
         return Task.FromResult(ingredient);

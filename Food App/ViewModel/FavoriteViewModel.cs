@@ -43,11 +43,11 @@ public partial class FavoriteViewModel : ObservableObject
     {
         if (food != null)
         {
-            string fav = food.foodID.ToString();
+            string fav = food.FoodID.ToString();
 
             try
             {
-                var foods = foodfav.FirstOrDefault(p => p.foodID.ToString() == fav);
+                var foods = foodfav.FirstOrDefault(p => p.FoodID.ToString() == fav);
 
                 if (foods != null)
                 {

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Food_App.View.ProfilePage">
+
+    <Grid>
+        <ScrollView>
+            <Grid>
+                <Grid VerticalOptions="Start"  
+                        BackgroundColor="Azure"
+                       ZIndex="2"
+                      HeightRequest="55">
+                    
+                <Label Text="My Profile"
+                       FontSize="17"
+                       TextColor="Black"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"/>
+                </Grid>
+                
+                <Grid  RowDefinitions=".05*,.25*,.35*,.09*"
+                       BackgroundColor="{StaticResource Gray100}"
+                       Padding="0,20,0,0"
+                       ZIndex="1">
+                    
+                <VerticalStackLayout Spacing="5" Grid.Row="1">
+                    
+                <Border  VerticalOptions="End"
+                       HorizontalOptions="Center"
+                       HeightRequest="180"
+                       WidthRequest="180"
+                        Stroke="White"
+                        StrokeThickness="10"
+                        StrokeShape="RoundRectangle 100"
+                        BackgroundColor="Transparent">
+                    
+                    <Image Source="images2.png"
+                           WidthRequest="170"
+                           HeightRequest="170"
+                           Aspect="AspectFill"/>
+                </Border>
+                <Label Text="Jane Doe"
+                       TextColor="Black"
+                       FontSize="20"
+                       VerticalTextAlignment="End"
+                       HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Row="2"
+                                         Spacing="10">
+                        
+                        <Frame WidthRequest="350"
+                               CornerRadius="10"
+                               HeightRequest="60"
+                               BorderColor="{StaticResource Gray400}">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer/>
+                            </Frame.GestureRecognizers>
+                            <Grid VerticalOptions="Start">
+
+                                <Image Source="love_default.png" 
+                                           Aspect="AspectFit"
+                                           HeightRequest="18"
+                                       HorizontalOptions="Start"/>
+
+                                <Label Text="Favorites"
+                                       TextColor="{StaticResource Gray400}"
+                                       FontSize="16"
+                                       HorizontalOptions="Start"
+                                       VerticalTextAlignment="Center"
+                                       Padding="45,0,0,0"/>
+                                
+                                <Image Source="love_default.png" 
+                                           Aspect="AspectFit"
+                                           HeightRequest="18"
+                                           HorizontalOptions="End"/>
+                            </Grid>
+                        </Frame>
+                        
+                         <Frame WidthRequest="350"
+                               CornerRadius="10"
+                               HeightRequest="60">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer/>
+                            </Frame.GestureRecognizers>
+                            <Grid VerticalOptions="Start">
+
+                                <Image Source="love_default.png" 
+                                           Aspect="AspectFit"
+                                           HeightRequest="18"
+                                       HorizontalOptions="Start"/>
+
+                                <Label Text="Favorites"
+                                       TextColor="{StaticResource Gray400}"
+                                       FontSize="16"
+                                       HorizontalOptions="Start"
+                                       VerticalTextAlignment="Center"
+                                       Padding="45,0,0,0"/>
+                                
+                                <Image Source="love_default.png" 
+                                           Aspect="AspectFit"
+                                           HeightRequest="18"
+                                           HorizontalOptions="End"/>
+                            </Grid>
+                        </Frame>
+                        
+                         <Frame WidthRequest="350"
+                               CornerRadius="10"
+                               HeightRequest="60">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer/>
+                            </Frame.GestureRecognizers>
+                            <Grid VerticalOptions="Start">
+
+                                <Image Source="love_default.png" 
+                                           Aspect="AspectFit"
+                                           HeightRequest="18"
+                                       HorizontalOptions="Start"/>
+
+                                <Label Text="Favorites"
+                                       TextColor="{StaticResource Gray400}"
+                                       FontSize="16"
+                                       HorizontalOptions="Start"
+                                       VerticalTextAlignment="Center"
+                                       Padding="45,0,0,0"/>
+                                
+                                <Image Source="love_default.png" 
+                                           Aspect="AspectFit"
+                                           HeightRequest="18"
+                                           HorizontalOptions="End"/>
+                            </Grid>
+                        </Frame>
+                        
+                         <Frame WidthRequest="350"
+                               CornerRadius="10"
+                               HeightRequest="60">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer/>
+                            </Frame.GestureRecognizers>
+                            <Grid VerticalOptions="Start">
+
+                                <Image Source="love_default.png" 
+                                           Aspect="AspectFit"
+                                           HeightRequest="18"
+                                       HorizontalOptions="Start"/>
+
+                                <Label Text="Favorites"
+                                       TextColor="{StaticResource Gray400}"
+                                       FontSize="16"
+                                       HorizontalOptions="Start"
+                                       VerticalTextAlignment="Center"
+                                       Padding="45,0,0,0"/>
+                                
+                                <Image Source="love_default.png" 
+                                           Aspect="AspectFit"
+                                           HeightRequest="18"
+                                           HorizontalOptions="End"/>
+                            </Grid>
+                        </Frame>
+                        
+                         <Frame WidthRequest="350"
+                               CornerRadius="10"
+                               HeightRequest="60">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer/>
+                            </Frame.GestureRecognizers>
+                            <Grid VerticalOptions="Start">
+
+                                <Image Source="love_default.png" 
+                                           Aspect="AspectFit"
+                                           HeightRequest="18"
+                                       HorizontalOptions="Start"/>
+
+                                <Label Text="Favorites"
+                                       TextColor="{StaticResource Gray400}"
+                                       FontSize="16"
+                                       HorizontalOptions="Start"
+                                       VerticalTextAlignment="Center"
+                                       Padding="45,0,0,0"/>
+                                
+                                <Image Source="love_default.png" 
+                                           Aspect="AspectFit"
+                                           HeightRequest="18"
+                                           HorizontalOptions="End"/>
+                            </Grid>
+                        </Frame>
+                      
+                    </VerticalStackLayout>
+
+                <Border Grid.Row="3" 
+                            Stroke="Black"
+                            StrokeThickness="0"
+                            StrokeShape="RoundRectangle 85,85,0,0"
+                            BackgroundColor="White">
+                        
+                        <Button Text="Log Out"
+                                WidthRequest="370"
+                                CornerRadius="55"
+                                HeightRequest="60"
+                                VerticalOptions="Center"
+                                HorizontalOptions="Center"/>
+                    </Border>
+                    
+                </Grid>
+               
+            </Grid>
+        </ScrollView>
+    </Grid>
+</ContentPage>

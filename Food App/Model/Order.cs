@@ -1,18 +1,17 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using Microsoft.VisualBasic;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using SQLite;
+using SQLiteNetExtensions.Attributes;
 
 namespace Food_App.Model;
 
 [INotifyPropertyChanged]
+[Table("Order")]
 public partial class Order
 {
-    [ObservableProperty]
-    private DateTime stateDateTime;
+    [PrimaryKey,AutoIncrement]
+    public int OrderID { get; set; }
+    public DateTime StateDateTime { get; set; }= DateTime.Now;
+    public DateTime EndDateTime { get; set; }= DateTime.Now;
 
     [ObservableProperty]
     private double tip;
@@ -30,8 +29,8 @@ public partial class Order
         }
     }
 
-    [ObservableProperty]
-    public List<Food> currentitems;
+    [OneToMany(CascadeOperations = CascadeOperation.All)]
+    public List<Food> Currentitems { get;set; }
 
     [ObservableProperty]
     private string status;

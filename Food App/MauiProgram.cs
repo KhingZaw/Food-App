@@ -3,6 +3,7 @@ using CommunityToolkit.Maui;
 using Food_App.ViewModel;
 using Food_App.Services;
 using Food_App.View;
+using PointOfSale.Service;
 
 namespace Food_App
 {
@@ -29,6 +30,7 @@ namespace Food_App
             services.AddSingleton<IConnectivity>(Connectivity.Current);
 
             services.AddSingleton<FoodService>();
+            builder.Services.AddSingleton<FoodsDatabase>();
 
             builder.Services.AddTransient<MainViewModel>();
             builder.Services.AddTransient<MainPage>(); 
@@ -50,6 +52,9 @@ namespace Food_App
 
             builder.Services.AddTransient<CheckOutViewModel>();
             builder.Services.AddTransient<CheckOutPage>();
+
+            builder.Services.AddTransient<ProfilePage>();
+            builder.Services.AddTransient<ProfileViewModel>();
 
 
             return builder.Build();

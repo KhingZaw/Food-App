@@ -37,10 +37,11 @@
                    HeightRequest="45"
                    HorizontalOptions="End"
                    VerticalOptions="StartAndExpand">
-                    <Image Aspect="AspectFit"
+                    <ImageButton Aspect="AspectFit"
                        Source="images2.jpg"
                        WidthRequest="100"
-                       HeightRequest="100"/>
+                       HeightRequest="100"
+                       Command="{Binding GoToProfileCommand}"/>
                 </Frame>
             </Grid>
 
@@ -268,7 +269,7 @@
                                         </ImageButton.Triggers>
                                     </ImageButton>
 
-                                    <Image Source="{Binding image}"
+                                    <Image Source="{Binding Image}"
                                        Aspect="AspectFill"
                                        WidthRequest="90"
                                        HeightRequest="100"
@@ -277,7 +278,7 @@
                                        BackgroundColor="Transparent"/>
 
                                     <Label Grid.Row="2"
-                                       Text="{Binding title}"
+                                       Text="{Binding Title}"
                                        TextColor="Black"
                                        FontSize="15"
                                        VerticalOptions="Center"/>
