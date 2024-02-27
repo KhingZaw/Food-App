@@ -75,19 +75,25 @@
 	  <None Remove="Resources\Images\delete.png" />
 	  <None Remove="Resources\Images\delete1.png" />
 	  <None Remove="Resources\Images\dessert.png" />
+	  <None Remove="Resources\Images\direction_arrow.png" />
+	  <None Remove="Resources\Images\favorites_icon.png" />
 	  <None Remove="Resources\Images\favs.png" />
 	  <None Remove="Resources\Images\foodlog.jpg" />
 	  <None Remove="Resources\Images\foodlog1.png" />
+	  <None Remove="Resources\Images\help_icon.png" />
 	  <None Remove="Resources\Images\history.png" />
 	  <None Remove="Resources\Images\home.png" />
 	  <None Remove="Resources\Images\images2.jpg" />
 	  <None Remove="Resources\Images\love_default.png" />
 	  <None Remove="Resources\Images\love_filled.png" />
+	  <None Remove="Resources\Images\person_icon.png" />
 	  <None Remove="Resources\Images\pizza.png" />
 	  <None Remove="Resources\Images\promotions.png" />
 	  <None Remove="Resources\Images\search_icon.png" />
+	  <None Remove="Resources\Images\setting_icon.png" />
 	  <None Remove="Resources\Images\shopping_icon.png" />
 	  <None Remove="Resources\Images\substract.png" />
+	  <None Remove="Resources\Images\transport_icon.png" />
 	</ItemGroup>
 
 	<ItemGroup>
